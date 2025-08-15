@@ -3,41 +3,52 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>RareTricks — Proxy UI</title>
+  <title>RareTricks — Claim MB</title>
   <link rel="stylesheet" href="/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <div class="card">
-    <h1>RareTricks — Claim MB</h1>
+  <div class="container">
+    <div class="card glassmorphism">
+      <div class="header">
+        <i class="fas fa-signal icon-large"></i>
+        <h1>Claim Your Mobile Data</h1>
+        <p>Enter your details below to activate your data bundle.</p>
+      </div>
 
-    <div class="row">
-      <label>Phone number</label>
-      <input id="phone" placeholder="03001234567" />
+      <form id="data-claim-form">
+        <div class="input-group">
+          <label for="phone"><i class="fas fa-phone"></i> Phone number</label>
+          <input type="tel" id="phone" placeholder="e.g., 03001234567" required />
+        </div>
+
+        <div class="input-group">
+          <label for="otp"><i class="fas fa-lock"></i> OTP</label>
+          <input type="text" id="otp" placeholder="Enter the 4-digit code" />
+        </div>
+
+        <div class="input-group">
+          <label for="claim-type"><i class="fas fa-database"></i> Select data bundle</label>
+          <div class="select-wrapper">
+            <select id="claim-type">
+              <option value="5gb">Weekly (5 GB)</option>
+              <option value="100gb">Monthly (100 GB)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button type="submit" id="btn-submit" class="btn-primary">
+            <span class="btn-text">Request & Activate</span>
+            <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+      </form>
+      
+      <div id="status-log" class="status-box">
+        <div id="log-message" class="log-message">Awaiting user input...</div>
+      </div>
     </div>
-
-    <div class="row actions">
-      <button id="btn-login">Request OTP (Login)</button>
-      <button id="btn-verify">Verify OTP</button>
-    </div>
-
-    <div class="row">
-      <label>OTP (for verify)</label>
-      <input id="otp" placeholder="1234" />
-    </div>
-
-    <div class="row">
-      <label>Claim type</label>
-      <select id="claim-type">
-        <option value="5gb">Claim Weekly (5GB)</option>
-        <option value="100gb">Claim Monthly (100GB)</option>
-      </select>
-    </div>
-
-    <div class="row actions">
-      <button id="btn-activate">Activate Claim (single number)</button>
-    </div>
-
-    <pre id="log"></pre>
   </div>
 
   <script src="/script.js"></script>
