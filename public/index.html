@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>RareTricks — Proxy UI</title>
+  <link rel="stylesheet" href="/style.css"/>
+</head>
+<body>
+  <div class="card">
+    <h1>RareTricks — Claim MB</h1>
+
+    <div class="row">
+      <label>Phone number</label>
+      <input id="phone" placeholder="03001234567" />
+    </div>
+
+    <div class="row actions">
+      <button id="btn-login">Request OTP (Login)</button>
+      <button id="btn-verify">Verify OTP</button>
+    </div>
+
+    <div class="row">
+      <label>OTP (for verify)</label>
+      <input id="otp" placeholder="1234" />
+    </div>
+
+    <div class="row">
+      <label>Claim type</label>
+      <select id="claim-type">
+        <option value="5gb">Claim Weekly (5GB)</option>
+        <option value="100gb">Claim Monthly (100GB)</option>
+      </select>
+    </div>
+
+    <div class="row actions">
+      <button id="btn-activate">Activate Claim (single number)</button>
+    </div>
+
+    <pre id="log"></pre>
+  </div>
+
+  <script src="/script.js"></script>
+</body>
+</html>
